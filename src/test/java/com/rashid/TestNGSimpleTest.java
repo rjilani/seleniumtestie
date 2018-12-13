@@ -45,7 +45,7 @@ public class TestNGSimpleTest {
     }
 
     private void setUpChrome() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\rjilani\\Documents\\webdrivers\\chromedriver_win32\\chromedriver.exe");
 //	    ChromeOptions chromeOptions = new ChromeOptions();
 //	    chromeOptions.addArguments("--headless");
 //		driver = new ChromeDriver(chromeOptions);
@@ -53,7 +53,7 @@ public class TestNGSimpleTest {
     }
 
     private void setUpIE() {
-        String exePath = "C:\\IEDriverServer_Win32_3.9.0\\IEDriverServer.exe";
+        String exePath = "C:\\Users\\rjilani\\Documents\\webdrivers\\IEDriverServer_Win32_3.9.0\\IEDriverServer.exe";
         InternetExplorerDriverService.Builder serviceBuilder = new InternetExplorerDriverService.Builder();
         serviceBuilder.usingAnyFreePort(); // This specifies that sever can pick any available free port to start
         serviceBuilder.usingDriverExecutable(new File(exePath)); //Tell it where you server exe is

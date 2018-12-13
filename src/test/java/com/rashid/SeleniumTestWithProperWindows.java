@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerDriverLogLevel;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
@@ -29,8 +31,8 @@ public class SeleniumTestWithProperWindows {
 
     @BeforeTest
     public void beforeMethod() {
-//		setUpChrome();
-        setUpIE();
+		setUpEdge();
+//        setUpIE();
 
         // Put a Implicit wait, this means that any search for elements on the page
         // could take the time the implicit wait is set for before throwing exception
@@ -40,15 +42,25 @@ public class SeleniumTestWithProperWindows {
     }
 
     private void setUpChrome() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\rjilani\\Documents\\webdrivers\\chromedriver_win32\\chromedriver.exe");
 //	    ChromeOptions chromeOptions = new ChromeOptions();
 //	    chromeOptions.addArguments("--headless");
 //		driver = new ChromeDriver(chromeOptions);
         driver = new ChromeDriver();
     }
 
+    private void setUpEdge() {
+        System.setProperty("webdriver.edge.driver", "C:\\Users\\rjilani\\Documents\\webdrivers\\edgedriver\\MicrosoftWebDriver.exe");
+        String exePath = "C:\\\\Users\\\\rjilani\\\\Documents\\\\webdrivers\\\\edgedriver\\\\MicrosoftWebDriver.exe";
+        EdgeDriverService.Builder serviceBuilder = new EdgeDriverService.Builder();
+        serviceBuilder.usingAnyFreePort(); // This specifies that sever can pick any available free port to start
+        serviceBuilder.usingDriverExecutable(new File(exePath)); //Tell it where you server exe is
+        EdgeDriverService service = serviceBuilder.build();
+        driver = new EdgeDriver();
+    }
+
     private void setUpIE() {
-        String exePath = "C:\\IEDriverServer_Win32_3.9.0\\IEDriverServer.exe";
+        String exePath = "C:\\Users\\rjilani\\Documents\\webdrivers\\IEDriverServer_Win32_3.9.0\\IEDriverServer.exe";
         InternetExplorerDriverService.Builder serviceBuilder = new InternetExplorerDriverService.Builder();
         serviceBuilder.usingAnyFreePort(); // This specifies that sever can pick any available free port to start
         serviceBuilder.usingDriverExecutable(new File(exePath)); //Tell it where you server exe is

@@ -22,7 +22,7 @@ public class SeleniumWebDriver {
 //		WebDriver driver = new InternetExplorerDriver();
 
 
-		String exePath = "C:\\IESeleniumDriver\\IEDriverServer_x64_3.8.0\\IEDriverServer.exe";
+		String exePath = "C:\\Users\\rjilani\\Documents\\webdrivers\\IEDriverServer_Win32_3.9.0\\IEDriverServer.exe";
 		InternetExplorerDriverService.Builder serviceBuilder = new InternetExplorerDriverService.Builder();
 		serviceBuilder.usingAnyFreePort(); // This specifies that sever can pick any available free port to start
 		serviceBuilder.usingDriverExecutable(new File(exePath)); //Tell it where you server exe is
