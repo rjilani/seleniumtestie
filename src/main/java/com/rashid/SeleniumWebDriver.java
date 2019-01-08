@@ -30,7 +30,7 @@ public class SeleniumWebDriver {
 		serviceBuilder.withLogFile(new File("C:\\SeleniumlogFile.txt")); //Specify the log file. Change it based on your system
 		InternetExplorerDriverService service = serviceBuilder.build(); //Create a driver service and pass it to Internet explorer driver instance
 		InternetExplorerDriver driver = new InternetExplorerDriver(service);
-//		driver.get("http://toolsqa.wpengine.com");
+		driver.get("http://toolsqa.wpengine.com");
 
 
 		  driver.get("http://www.cnn.com");
